@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-class Counter extends Component {
+class Counter2 extends Component {
     state = {
         name: '',
         surname: ''
@@ -16,13 +16,17 @@ class Counter extends Component {
     }
     handleSubmit(){
         axios.request({
-            method: 'GET',
+            method: 'POST',
             mode: 'cors',
+            data:{
+                name: this.state.name,
+                surname: this.state.surname,
+            },
             headers:{
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             },
-            url: 'http://54.172.125.255:5000/'
+            url: 'http://54.172.125.255:5000/test_post'
         }).then(res=>{
             console.log(res)
         }).catch(err=>{
@@ -55,4 +59,4 @@ class Counter extends Component {
     }
 }
  
-export default Counter;
+export default Counter2;
