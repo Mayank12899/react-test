@@ -30,8 +30,12 @@ pipeline {
         }
         stage("Deploy") {
             steps {
+                sh '''
+                    echo "Trying Deploy"
+                '''
                 sh "sudo rm -rf /var/www/react-test"
-                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/react-test/"
+                sh "sudo rm -f /var/www/html/index.nginx-debian.html"
+                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/html/"
             }
         }
     }
