@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import Counter from './components/counter';
+//import Counter from './components/counter';
 import Counter2 from "./components/counter2";
 import 'bootstrap/dist/css/bootstrap.css';
 
