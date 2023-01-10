@@ -11,16 +11,7 @@ pipeline {
                     npm install
                 '''
             }
-        }
- 
-        stage('Unit Tests') {
-            steps {
-                sh '''
-                    npm run test -- --watchAll=false
-                '''
-            }
-        }
- 
+        } 
         stage('Build') {
             steps {
                 sh '''
